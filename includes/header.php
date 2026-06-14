@@ -65,12 +65,13 @@ $base_url = '/rpl';
         <div class="flex justify-between h-16">
             <div class="flex items-center">
                 <a href="<?php echo $base_url; ?>/public/index.php" class="flex-shrink-0 flex items-center gap-2 group">
-                    <svg class="h-8 w-8 text-primary group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                    </svg>
+                    
+                    <!-- REPLACEMENT: Tag SVG lama diganti dengan tag IMG di bawah ini -->
+                    <img src="../assets/img/logo-desa.png" alt="Logo Desa Puwardana" class="h-10 w-auto group-hover:scale-110 transition-transform object-contain">
+                    
                     <div>
-                        <span class="block text-xs text-slate-500 font-medium leading-none">Fakultas Ilmu Komputer UNSIKA</span>
-                        <span class="block text-lg font-bold text-navy-800 leading-tight">Sistem Transparansi Keuangan Desa</span>
+                        <span class="block text-xs text-slate-500 font-medium leading-none">Transparansi Keuangan</span>
+                        <span class="block text-lg font-bold text-navy-800 leading-tight">Desa Puwardana</span>
                     </div>
                 </a>
             </div>
@@ -90,7 +91,6 @@ $base_url = '/rpl';
                     <a href="<?php echo $base_url; ?>/public/login.php" class="bg-primary text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors hover-lift shadow-sm">Login</a>
                 <?php endif; ?>
             </div>
-            
             <!-- Mobile menu button -->
             <div class="flex items-center sm:hidden">
                 <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-slate-500 hover:bg-slate-100" aria-controls="mobile-menu" aria-expanded="false" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
