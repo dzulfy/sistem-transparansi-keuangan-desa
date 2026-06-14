@@ -39,9 +39,12 @@ $current_page = basename($_SERVER['PHP_SELF']);
 <!-- Sidebar -->
 <aside class="w-64 bg-white border-r border-slate-200 flex flex-col flex-shrink-0">
     <div class="h-16 flex items-center px-6 border-b border-slate-200">
-        <div>
-            <h1 class="text-xl font-bold text-navy-800 leading-tight">STKD</h1>
-            <p class="text-[10px] font-semibold text-slate-500 uppercase tracking-wider">Sistem Transparansi</p>
+        <div class="flex items-center gap-4">
+            <img src="../assets/img/logo-desa.PNG" alt="Logo Desa Purwadana" class="h-10 w-auto group-hover:scale-110 transition-transform object-contain">
+            <div>
+                        <span class="block text-xs text-slate-500 font-medium leading-none">Transparansi Keuangan</span>
+                        <span class="block text-lg font-bold text-navy-800 leading-tight">Desa Purwadana</span>
+                    </div>
         </div>
     </div>
     
@@ -55,14 +58,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 <i data-lucide="users" class="<?php echo $current_page == 'kelola_user.php' ? 'text-white' : 'text-slate-400 group-hover:text-slate-500'; ?> mr-3 flex-shrink-0 h-5 w-5"></i>
                 Kelola User
             </a>
-            <a href="input_anggaran.php" class="<?php echo $current_page == 'input_anggaran.php' ? 'bg-primary text-white' : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'; ?> group flex items-center px-3 py-2.5 text-sm font-medium rounded-lg transition-colors">
-                <i data-lucide="file-plus-2" class="<?php echo $current_page == 'input_anggaran.php' ? 'text-white' : 'text-slate-400 group-hover:text-slate-500'; ?> mr-3 flex-shrink-0 h-5 w-5"></i>
-                Input Anggaran
-            </a>
-            <a href="daftar_anggaran.php" class="<?php echo $current_page == 'daftar_anggaran.php' ? 'bg-primary text-white' : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'; ?> group flex items-center px-3 py-2.5 text-sm font-medium rounded-lg transition-colors">
-                <i data-lucide="list-todo" class="<?php echo $current_page == 'daftar_anggaran.php' ? 'text-white' : 'text-slate-400 group-hover:text-slate-500'; ?> mr-3 flex-shrink-0 h-5 w-5"></i>
-                Daftar Anggaran
-            </a>
+
             <a href="log_aktivitas.php" class="<?php echo $current_page == 'log_aktivitas.php' ? 'bg-primary text-white' : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'; ?> group flex items-center px-3 py-2.5 text-sm font-medium rounded-lg transition-colors">
                 <i data-lucide="history" class="<?php echo $current_page == 'log_aktivitas.php' ? 'text-white' : 'text-slate-400 group-hover:text-slate-500'; ?> mr-3 flex-shrink-0 h-5 w-5"></i>
                 Log Aktivitas

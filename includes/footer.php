@@ -6,14 +6,14 @@
             <div class="flex justify-center md:justify-start mb-6 md:mb-0">
                 <div>
                     <h3 class="text-sm font-bold text-slate-900 tracking-tight">Institutional Transparency Project</h3>
-                    <p class="text-sm text-slate-500 mt-1">&copy; 2024 Fakultas Ilmu Komputer UNSIKA. All rights reserved.</p>
+                    <p class="text-sm text-slate-500 mt-1">&copy; <?php echo date('Y'); ?> Fakultas Ilmu Komputer UNSIKA. All rights reserved.</p>
                 </div>
             </div>
             <div class="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-2">
-                <a href="#" class="text-sm text-slate-500 hover:text-primary transition-colors">Kebijakan Privasi</a>
-                <a href="#" class="text-sm text-slate-500 hover:text-primary transition-colors">Syarat & Ketentuan</a>
-                <a href="#" class="text-sm text-slate-500 hover:text-primary transition-colors">Kontak Kami</a>
-                <a href="#" class="text-sm text-slate-500 hover:text-primary transition-colors">Peta Situs</a>
+                <a href="/rpl/public/syarat-ketentuan.php" class="text-sm text-slate-500 hover:text-primary transition-colors">Kebijakan Privasi</a>
+                <a href="/rpl/public/syarat-ketentuan.php" class="text-sm text-slate-500 hover:text-primary transition-colors">Syarat &amp; Ketentuan</a>
+                <a href="/rpl/public/kontak.php" class="text-sm text-slate-500 hover:text-primary transition-colors">Kontak Kami</a>
+                <a href="/rpl/public/peta-situs.php" class="text-sm text-slate-500 hover:text-primary transition-colors">Peta Situs</a>
             </div>
         </div>
     </div>

@@ -34,17 +34,16 @@ $current_page = basename($_SERVER['PHP_SELF']);
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body class="bg-slate-50 font-sans text-slate-800 antialiased flex h-screen overflow-hidden">
+<body class="bg-secondary font-sans text-slate-800 antialiased flex h-screen overflow-hidden">
 
+<!-- Sidebar -->
 <aside class="w-64 bg-white border-r border-slate-200 flex flex-col flex-shrink-0">
-    <div class="p-6 border-b border-slate-200">
-        <div class="flex items-center gap-3">
-            <div class="h-10 w-10 bg-primary text-white rounded-lg flex items-center justify-center">
-                <i data-lucide="landmark" class="h-6 w-6"></i>
-            </div>
+    <div class="h-16 flex items-center px-6 border-b border-slate-200">
+        <div class="flex items-center gap-4">
+            <img src="../assets/img/logo-desa.PNG" alt="Logo Desa Purwadana" class="h-10 w-auto group-hover:scale-110 transition-transform object-contain">
             <div>
-                <h1 class="text-base font-bold text-navy-800 leading-tight">DesaTransparan</h1>
-                <p class="text-xs text-slate-500">Village Head Portal</p>
+                <span class="block text-xs text-slate-500 font-medium leading-none">Transparansi Keuangan</span>
+                <span class="block text-lg font-bold text-navy-800 leading-tight">Desa Purwadana</span>
             </div>
         </div>
     </div>
@@ -71,39 +70,22 @@ $current_page = basename($_SERVER['PHP_SELF']);
     </div>
     
     <div class="p-4 border-t border-slate-200">
-        <a href="#" class="group flex items-center px-3 py-2 text-sm font-medium text-slate-600 hover:text-primary transition-colors">
-            <i data-lucide="settings" class="text-slate-400 group-hover:text-primary mr-3 flex-shrink-0 h-5 w-5"></i>
-            Pengaturan
-        </a>
-        <a href="<?php echo $base_url; ?>/logout.php" class="mt-1 group flex items-center px-3 py-2 text-sm font-medium text-red-600 hover:bg-red-50 rounded-lg transition-colors">
-            <i data-lucide="log-out" class="text-red-400 group-hover:text-red-500 mr-3 flex-shrink-0 h-5 w-5"></i>
+        <div class="flex items-center gap-3 px-3 py-2 rounded-lg bg-slate-50">
+            <div class="h-8 w-8 rounded-full bg-navy-800 text-white flex items-center justify-center font-bold text-xs">
+                <?php echo strtoupper(substr($_SESSION['nama'] ?? 'K', 0, 1)); ?>
+            </div>
+            <div class="flex-1 min-w-0">
+                <p class="text-sm font-medium text-slate-900 truncate"><?php echo htmlspecialchars($_SESSION['nama'] ?? 'Kepala Desa'); ?></p>
+                <p class="text-xs text-slate-500 truncate">Kepala Desa</p>
+            </div>
+        </div>
+        <a href="<?php echo $base_url; ?>/logout.php" class="mt-2 group flex items-center px-3 py-2 text-sm font-medium text-red-600 hover:bg-red-50 rounded-lg transition-colors">
+            <i data-lucide="log-out" class="text-red-400 group-hover:text-red-500 mr-3 flex-shrink-0 h-4 w-4"></i>
             Keluar
         </a>
     </div>
 </aside>
 
-<main class="flex-1 flex flex-col overflow-hidden">
-    <!-- Topbar -->
-    <header class="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-6 sm:px-8">
-        <h2 class="text-xl font-bold text-navy-800">Dashboard Persetujuan</h2>
-        <div class="flex items-center gap-4">
-            <div class="relative hidden sm:block">
-                <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400"></i>
-                <input type="text" placeholder="Cari kegiatan..." class="pl-9 pr-4 py-2 bg-slate-100 border-transparent rounded-full text-sm focus:bg-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none w-64">
-            </div>
-            <button class="p-2 text-slate-400 hover:text-slate-600"><i data-lucide="bell" class="h-5 w-5"></i></button>
-            <button class="p-2 text-slate-400 hover:text-slate-600"><i data-lucide="help-circle" class="h-5 w-5"></i></button>
-            <div class="h-8 w-px bg-slate-200 mx-2"></div>
-            <div class="flex items-center gap-3">
-                <div class="text-right hidden sm:block">
-                    <p class="text-sm font-bold text-slate-800 leading-tight"><?php echo htmlspecialchars($_SESSION['nama'] ?? 'Kepala Desa'); ?></p>
-                    <p class="text-[10px] text-slate-500 uppercase tracking-wider">Kepala Desa</p>
-                </div>
-                <div class="h-9 w-9 rounded-full bg-slate-200 overflow-hidden border border-slate-200">
-                    <img src="https://ui-avatars.com/api/?name=<?php echo urlencode($_SESSION['nama'] ?? 'K'); ?>&background=random" alt="Avatar" class="h-full w-full object-cover">
-                </div>
-            </div>
-        </div>
-    </header>
-    
+<!-- Main Content wrapper -->
+<main class="flex-1 flex flex-col overflow-hidden bg-slate-50/50">
     <div class="flex-1 overflow-y-auto p-6 md:p-8">

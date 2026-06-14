@@ -11,6 +11,79 @@ $totalRealisasi = $stmtRealisasi->fetch()['total'] ?? 0;
 
 $persentase = $totalAnggaran > 0 ? round(($totalRealisasi / $totalAnggaran) * 100, 1) : 0;
 
+// Calculate active year
+$stmtYear = $pdo->query("SELECT MAX(YEAR(tanggal)) as max_year FROM anggaran WHERE status = 'APPROVED'");
+$activeYear = $stmtYear->fetch()['max_year'];
+if (!$activeYear) {
+    $activeYear = date('Y');
+}
+
+// Monthly labels
+$months = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agt', 'Sep', 'Okt', 'Nov', 'Des'];
+$anggaranBulanan = array_fill(1, 12, 0);
+$realisasiBulanan = array_fill(1, 12, 0);
+
+// Get monthly budgets
+$stmt = $pdo->prepare("
+    SELECT MONTH(tanggal) as bulan, SUM(jumlah_anggaran) as total 
+    FROM anggaran 
+    WHERE status = 'APPROVED' AND YEAR(tanggal) = ? 
+    GROUP BY MONTH(tanggal)
+");
+$stmt->execute([$activeYear]);
+while ($row = $stmt->fetch()) {
+    $anggaranBulanan[(int)$row['bulan']] = (float)$row['total'];
+}
+
+// Get monthly realizations
+$stmt = $pdo->prepare("
+    SELECT MONTH(tanggal) as bulan, SUM(jumlah_realisasi) as total 
+    FROM realisasi 
+    WHERE status = 'APPROVED' AND YEAR(tanggal) = ? 
+    GROUP BY MONTH(tanggal)
+");
+$stmt->execute([$activeYear]);
+while ($row = $stmt->fetch()) {
+    $realisasiBulanan[(int)$row['bulan']] = (float)$row['total'];
+}
+
+// Helper categorizer
+if (!function_exists('dapatkanKategori')) {
+    function dapatkanKategori($nama_kegiatan) {
+        $nama = strtolower($nama_kegiatan);
+        if (strpos($nama, 'jembatan') !== false || strpos($nama, 'jalan') !== false || strpos($nama, 'kantor') !== false || strpos($nama, 'bangun') !== false || strpos($nama, 'renovasi') !== false || strpos($nama, 'infrastruktur') !== false || strpos($nama, 'gedung') !== false || strpos($nama, 'saluran') !== false || strpos($nama, 'drainase') !== false) {
+            return 'Infrastruktur';
+        } elseif (strpos($nama, 'sehat') !== false || strpos($nama, 'kesehatan') !== false || strpos($nama, 'posyandu') !== false || strpos($nama, 'obat') !== false || strpos($nama, 'puskesmas') !== false || strpos($nama, 'gizi') !== false || strpos($nama, 'stunting') !== false) {
+            return 'Kesehatan';
+        } elseif (strpos($nama, 'sekolah') !== false || strpos($nama, 'pendidikan') !== false || strpos($nama, 'guru') !== false || strpos($nama, 'paud') !== false || strpos($nama, 'buku') !== false || strpos($nama, 'perpustakaan') !== false || strpos($nama, 'pelatihan') !== false) {
+            return 'Pendidikan';
+        } else {
+            return 'Pemberdayaan'; // Default fallback
+        }
+    }
+}
+
+// Realization per category
+$stmtRealisasiKategori = $pdo->query("
+    SELECT r.jumlah_realisasi, a.nama_kegiatan 
+    FROM realisasi r 
+    JOIN anggaran a ON r.id_anggaran = a.id_anggaran 
+    WHERE r.status = 'APPROVED'
+");
+$realisasiKategoriList = $stmtRealisasiKategori->fetchAll();
+
+$kategoriTotals = [
+    'Infrastruktur' => 0,
+    'Pemberdayaan' => 0,
+    'Kesehatan' => 0,
+    'Pendidikan' => 0
+];
+
+foreach ($realisasiKategoriList as $row) {
+    $kategori = dapatkanKategori($row['nama_kegiatan']);
+    $kategoriTotals[$kategori] += (float)$row['jumlah_realisasi'];
+}
+
 require_once '../includes/header.php';
 ?>
 
@@ -64,17 +137,17 @@ require_once '../includes/header.php';
     new Chart(barCtx, {
         type: 'bar',
         data: {
-            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun'],
+            labels: <?php echo json_encode($months); ?>,
             datasets: [
                 {
                     label: 'Anggaran',
-                    data: [150, 200, 180, 220, 250, 300], // Mockup data in millions
+                    data: <?php echo json_encode(array_values($anggaranBulanan)); ?>,
                     backgroundColor: '#1e3a5f',
                     borderRadius: 4
                 },
                 {
                     label: 'Realisasi',
-                    data: [120, 180, 150, 210, 190, 200], // Mockup data in millions
+                    data: <?php echo json_encode(array_values($realisasiBulanan)); ?>,
                     backgroundColor: '#2563eb',
                     borderRadius: 4
                 }
@@ -98,7 +171,12 @@ require_once '../includes/header.php';
         data: {
             labels: ['Infrastruktur', 'Pemberdayaan', 'Kesehatan', 'Pendidikan'],
             datasets: [{
-                data: [45, 25, 15, 15],
+                data: [
+                    <?php echo $kategoriTotals['Infrastruktur']; ?>,
+                    <?php echo $kategoriTotals['Pemberdayaan']; ?>,
+                    <?php echo $kategoriTotals['Kesehatan']; ?>,
+                    <?php echo $kategoriTotals['Pendidikan']; ?>
+                ],
                 backgroundColor: ['#1e3a5f', '#2563eb', '#3b82f6', '#93c5fd'],
                 borderWidth: 0,
                 hoverOffset: 4

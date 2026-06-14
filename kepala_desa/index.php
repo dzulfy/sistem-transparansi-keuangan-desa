@@ -18,6 +18,8 @@ $totalAnggaranDisetujui = $stmt->fetch()['total'] ?? 0;
 $stmt = $pdo->query("SELECT SUM(jumlah_realisasi) as total FROM realisasi WHERE status = 'APPROVED'");
 $totalRealisasiCair = $stmt->fetch()['total'] ?? 0;
 
+$persentaseRealisasi = $totalAnggaranDisetujui > 0 ? round(($totalRealisasiCair / $totalAnggaranDisetujui) * 100) : 0;
+
 // Fetch pending antrian
 $stmt = $pdo->query("SELECT a.*, u.nama as pengirim FROM anggaran a JOIN user u ON a.id_user = u.id_user WHERE a.status = 'PENDING' ORDER BY a.tanggal ASC LIMIT 3");
 $antrianAnggaran = $stmt->fetchAll();
@@ -128,22 +130,22 @@ require_once '../includes/sidebar_kepala_desa.php';
 <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
     <div class="bg-blue-50/50 rounded-xl p-6 border border-blue-100">
         <p class="text-sm font-medium text-slate-500 mb-2">Total Anggaran Disetujui</p>
-        <h3 class="text-3xl font-bold text-primary mb-2">Rp <?php echo number_format($totalAnggaranDisetujui / 1000000000, 1, ',', '.'); ?>B</h3>
-        <p class="text-xs font-medium text-green-600 flex items-center">
-            <i data-lucide="trending-up" class="h-3 w-3 mr-1"></i> +12% dari bln lalu
+        <h3 class="text-2xl font-bold text-primary mb-2"><?php echo formatRupiah($totalAnggaranDisetujui); ?></h3>
+        <p class="text-xs font-medium text-slate-500 flex items-center">
+            <i data-lucide="info" class="h-3.5 w-3.5 mr-1 text-blue-500"></i> Pagu belanja disetujui
         </p>
     </div>
     <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
         <p class="text-sm font-medium text-slate-500 mb-2">Total Realisasi Cair</p>
-        <h3 class="text-3xl font-bold text-green-700 mb-2">Rp <?php echo number_format($totalRealisasiCair / 1000000, 0, ',', '.'); ?>M</h3>
-        <p class="text-xs text-slate-400 flex items-center">
-            <i data-lucide="history" class="h-3 w-3 mr-1"></i> Update 2 jam lalu
+        <h3 class="text-2xl font-bold text-green-700 mb-2"><?php echo formatRupiah($totalRealisasiCair); ?></h3>
+        <p class="text-xs font-medium text-slate-500 flex items-center">
+            <i data-lucide="check-circle" class="h-3.5 w-3.5 mr-1 text-green-600"></i> Dana terserap oleh kegiatan
         </p>
     </div>
     <div class="bg-navy-800 rounded-xl p-6 text-white relative overflow-hidden flex flex-col justify-between shadow-md">
         <div class="relative z-10">
             <p class="text-sm text-blue-200 mb-1">Laporan Akuntabilitas</p>
-            <p class="text-lg font-medium mb-4">98% Transparansi Tercapai</p>
+            <p class="text-lg font-medium mb-4"><?php echo $persentaseRealisasi; ?>% Anggaran Terserap</p>
             <a href="monitoring_laporan.php" class="bg-primary hover:bg-blue-600 text-white text-xs font-semibold px-4 py-2 rounded-full transition-colors inline-block">
                 Unduh Laporan PDF
             </a>

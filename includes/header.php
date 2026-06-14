@@ -67,11 +67,11 @@ $base_url = '/rpl';
                 <a href="<?php echo $base_url; ?>/public/index.php" class="flex-shrink-0 flex items-center gap-2 group">
                     
                     <!-- REPLACEMENT: Tag SVG lama diganti dengan tag IMG di bawah ini -->
-                    <img src="../assets/img/logo-desa.png" alt="Logo Desa Puwardana" class="h-10 w-auto group-hover:scale-110 transition-transform object-contain">
+                    <img src="../assets/img/logo-desa.PNG" alt="Logo Desa Purwadana" class="h-10 w-auto group-hover:scale-110 transition-transform object-contain">
                     
                     <div>
                         <span class="block text-xs text-slate-500 font-medium leading-none">Transparansi Keuangan</span>
-                        <span class="block text-lg font-bold text-navy-800 leading-tight">Desa Puwardana</span>
+                        <span class="block text-lg font-bold text-navy-800 leading-tight">Desa Purwadana</span>
                     </div>
                 </a>
             </div>

@@ -8,12 +8,7 @@ require_once '../includes/header.php';
         <div class="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32 pt-10 sm:pt-16 lg:pt-20">
             <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
                 <div class="sm:text-center lg:text-left">
-                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 mb-4 border border-green-200">
-                        <svg class="mr-1.5 h-4 w-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                        </svg>
-                        Akuntabel & Terpercaya
-                    </span>
+                    
                     <h1 class="text-4xl tracking-tight font-extrabold text-navy-900 sm:text-5xl md:text-6xl">
                         <span class="block">Transparansi Keuangan</span>
                         <span class="block text-primary">Desa Purwadana</span>
@@ -39,7 +34,7 @@ require_once '../includes/header.php';
     </div>
     <!-- Hero Image Placeholder (Abstract Pattern) -->
     <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 bg-slate-50 flex items-center justify-center border-l border-slate-100">
-    <img src="../assets/img/kantor-desa.jpg" alt="Kantor Desa Maju Jaya" class="w-full h-full object-cover">
+    <img src="../assets/img/kantor-desa.jpg" alt="Kantor Desa Purwadana" class="w-full h-full object-cover">
     </div>
 </div>
 

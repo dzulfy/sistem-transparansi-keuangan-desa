@@ -112,10 +112,10 @@ $html = '
 <body>
 
     <div class="header">
-        <h2>PEMERINTAH DESA</h2>
-        <h2>DESA CONTOH</h2>
-        <p>Kecamatan XXXXX, Kabupaten XXXXX</p>
-        <p>Alamat: Jl. Desa No. 1</p>
+        <h2>PEMERINTAH KABUPATEN KARAWANG</h2>
+        <h2>KECAMATAN TELUKJAMBE TIMUR</h2>
+        <h2>DESA PURWADANA</h2>
+        <p>Alamat: Jl. Bobojong No. 1 Desa Purwadana</p>
     </div>
 
     <div class="title">

@@ -296,7 +296,7 @@ require_once '../includes/header.php';
 
             <button 
                 type="submit"
-                class="bg-navy-800 text-white px-5 py-2.5 rounded-lg text-sm hover:bg-navy-900 font-medium transition-colors"
+                class="bg-primary text-white px-5 py-2.5 rounded-lg text-sm hover:bg-navy-900 font-medium transition-colors"
             >
                 Filter
             </button>
