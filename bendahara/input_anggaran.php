@@ -2,7 +2,7 @@
 require_once '../config/database.php';
 require_once '../includes/functions.php';
 require_once '../includes/auth.php';
-requireRole('admin');
+requireRole('bendahara');
 
 $error = '';
 $success = '';
@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         try {
             $stmt = $pdo->prepare("INSERT INTO anggaran (nama_kegiatan, jumlah_anggaran, tanggal, id_user, status) VALUES (?, ?, ?, ?, 'PENDING')");
             $stmt->execute([$nama_kegiatan, $jumlah_anggaran, $tanggal, $id_user]);
-            logAktivitas($pdo, $id_user, "Input anggaran baru: $nama_kegiatan (Rp " . number_format($jumlah_anggaran, 0, ',', '.') . ")");
+            logAktivitas($pdo, $id_user, "Input anggaran baru (oleh Bendahara): $nama_kegiatan (Rp " . number_format($jumlah_anggaran, 0, ',', '.') . ")");
             $success = "Anggaran berhasil disimpan dan menunggu validasi Kepala Desa.";
         } catch(PDOException $e) {
             $error = "Terjadi kesalahan saat menyimpan anggaran.";
@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-require_once '../includes/sidebar_admin.php';
+require_once '../includes/sidebar_bendahara.php';
 ?>
 
 <div class="flex justify-between items-center mb-8">

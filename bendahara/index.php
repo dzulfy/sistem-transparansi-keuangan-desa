@@ -86,7 +86,7 @@ require_once '../includes/sidebar_bendahara.php';
                         <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                             <span class="text-slate-500 sm:text-sm font-medium">Rp</span>
                         </div>
-                        <input type="number" name="jumlah_realisasi" required class="w-full pl-10 border-slate-300 rounded-lg shadow-sm focus:ring-primary focus:border-primary p-2.5 border text-sm" placeholder="Masukkan jumlah dana...">
+                        <input type="text" name="jumlah_realisasi" required class="w-full pl-10 border-slate-300 rounded-lg shadow-sm focus:ring-primary focus:border-primary p-2.5 border text-sm" placeholder="Masukkan jumlah dana..." inputmode="numeric" pattern="[0-9.]*">
                     </div>
                 </div>
                 <div>

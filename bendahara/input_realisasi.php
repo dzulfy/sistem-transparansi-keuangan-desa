@@ -14,7 +14,7 @@ $anggaranList = $stmt->fetchAll();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id_anggaran = (int)$_POST['id_anggaran'];
-    $jumlah_realisasi = floatval($_POST['jumlah_realisasi']);
+    $jumlah_realisasi = floatval(str_replace('.', '', $_POST['jumlah_realisasi']));
     $tanggal = $_POST['tanggal'];
     
     if (empty($id_anggaran) || $jumlah_realisasi <= 0 || empty($tanggal)) {
@@ -72,7 +72,7 @@ require_once '../includes/sidebar_bendahara.php';
                 <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                     <span class="text-slate-500 font-medium">Rp</span>
                 </div>
-                <input type="number" name="jumlah_realisasi" required class="w-full pl-12 border-slate-300 rounded-lg shadow-sm focus:ring-primary focus:border-primary p-2.5 border" placeholder="0">
+                <input type="text" name="jumlah_realisasi" required class="w-full pl-12 border-slate-300 rounded-lg shadow-sm focus:ring-primary focus:border-primary p-2.5 border" placeholder="0" inputmode="numeric" pattern="[0-9.]*">
             </div>
         </div>
         <div>

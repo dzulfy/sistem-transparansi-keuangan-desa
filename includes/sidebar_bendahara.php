@@ -54,6 +54,14 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 <i data-lucide="layout-dashboard" class="<?php echo $current_page == 'index.php' ? 'text-primary' : 'text-slate-400 group-hover:text-slate-500'; ?> mr-3 flex-shrink-0 h-5 w-5"></i>
                 Dasbor
             </a>
+            <a href="input_anggaran.php" class="<?php echo $current_page == 'input_anggaran.php' ? 'bg-slate-100 text-primary font-semibold' : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'; ?> group flex items-center px-3 py-2.5 text-sm rounded-lg transition-colors">
+                <i data-lucide="file-plus-2" class="<?php echo $current_page == 'input_anggaran.php' ? 'text-primary' : 'text-slate-400 group-hover:text-slate-500'; ?> mr-3 flex-shrink-0 h-5 w-5"></i>
+                Input Anggaran
+            </a>
+            <a href="daftar_anggaran.php" class="<?php echo $current_page == 'daftar_anggaran.php' ? 'bg-slate-100 text-primary font-semibold' : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'; ?> group flex items-center px-3 py-2.5 text-sm rounded-lg transition-colors">
+                <i data-lucide="list-todo" class="<?php echo $current_page == 'daftar_anggaran.php' ? 'text-primary' : 'text-slate-400 group-hover:text-slate-500'; ?> mr-3 flex-shrink-0 h-5 w-5"></i>
+                Daftar Anggaran
+            </a>
             <a href="input_realisasi.php" class="<?php echo $current_page == 'input_realisasi.php' ? 'bg-slate-100 text-primary font-semibold' : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'; ?> group flex items-center px-3 py-2.5 text-sm rounded-lg transition-colors">
                 <i data-lucide="file-edit" class="<?php echo $current_page == 'input_realisasi.php' ? 'text-primary' : 'text-slate-400 group-hover:text-slate-500'; ?> mr-3 flex-shrink-0 h-5 w-5"></i>
                 Input Realisasi

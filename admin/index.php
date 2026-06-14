@@ -117,7 +117,7 @@ require_once '../includes/sidebar_admin.php';
                         <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                             <span class="text-slate-500 sm:text-sm">Rp</span>
                         </div>
-                        <input type="number" name="jumlah_anggaran" required class="w-full pl-10 border-slate-300 rounded-lg shadow-sm focus:ring-primary focus:border-primary p-2 border" placeholder="0">
+                        <input type="text" name="jumlah_anggaran" required class="w-full pl-10 border-slate-300 rounded-lg shadow-sm focus:ring-primary focus:border-primary p-2 border" placeholder="0" inputmode="numeric" pattern="[0-9.]*">
                     </div>
                 </div>
                 <div>
