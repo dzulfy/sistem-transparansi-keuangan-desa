@@ -20,11 +20,6 @@ function logAktivitas($pdo, $id_user, $aktivitas) {
 }
 
 function getBaseUrl() {
-    $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http";
-    $host = $_SERVER['HTTP_HOST'];
-    $scriptName = dirname($_SERVER['SCRIPT_NAME']);
-    // if script is deeply nested, return to the root 'rpl' folder. For simplicity we assume '/rpl/' is the base.
-    // Adjust this to match your local setup
-    return $protocol . "://" . $host . "/rpl"; 
+    return "https://desapurwadana.my.id"; 
 }
 ?>

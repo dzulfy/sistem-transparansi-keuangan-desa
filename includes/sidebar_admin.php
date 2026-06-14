@@ -3,7 +3,7 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-$base_url = '/rpl';
+$base_url = 'https://desapurwadana.my.id';
 $current_page = basename($_SERVER['PHP_SELF']);
 ?>
 <!DOCTYPE html>

@@ -4,7 +4,7 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 // determine base path dynamically or use a constant
-$base_url = '/rpl'; 
+$base_url = 'https://desapurwadana.my.id'; 
 ?>
 <!DOCTYPE html>
 <html lang="id">
