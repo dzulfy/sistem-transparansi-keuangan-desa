@@ -1,7 +1,7 @@
 <?php
-require_once '../includes/header.php';
-require_once '../config/mail.php';
-require_once '../vendor/autoload.php';
+require_once 'includes/header.php';
+require_once 'config/mail.php';
+require_once 'vendor/autoload.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
@@ -248,4 +248,4 @@ use PHPMailer\PHPMailer\Exception;
     </div>
 </div>
 
-<?php require_once '../includes/footer.php'; ?>
+<?php require_once 'includes/footer.php'; ?>

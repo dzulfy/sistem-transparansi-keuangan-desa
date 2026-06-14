@@ -9,7 +9,7 @@ function isLoggedIn() {
 
 function requireLogin() {
     if (!isLoggedIn()) {
-        redirect('../public/login.php');
+        redirect('../login.php');
     }
 }
 
@@ -24,7 +24,7 @@ function requireRole($role) {
         } elseif ($_SESSION['role'] === 'kepala_desa') {
             redirect('../kepala_desa/index.php');
         } else {
-            redirect('../public/login.php');
+            redirect('../login.php');
         }
     }
 }

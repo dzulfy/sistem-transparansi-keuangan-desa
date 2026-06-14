@@ -1,6 +1,6 @@
 <?php
-require_once '../config/database.php';
-require_once '../includes/functions.php';
+require_once 'config/database.php';
+require_once 'includes/functions.php';
 
 // Calculate totals for summary cards
 $stmtAnggaran = $pdo->query("SELECT SUM(jumlah_anggaran) as total FROM anggaran WHERE status = 'APPROVED'");
@@ -84,7 +84,7 @@ foreach ($realisasiKategoriList as $row) {
     $kategoriTotals[$kategori] += (float)$row['jumlah_realisasi'];
 }
 
-require_once '../includes/header.php';
+require_once 'includes/header.php';
 ?>
 
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
@@ -193,4 +193,4 @@ require_once '../includes/header.php';
     });
 </script>
 
-<?php require_once '../includes/footer.php'; ?>
+<?php require_once 'includes/footer.php'; ?>

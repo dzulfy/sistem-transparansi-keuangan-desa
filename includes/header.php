@@ -64,10 +64,10 @@ $base_url = '/rpl';
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex items-center">
-                <a href="<?php echo $base_url; ?>/public/index.php" class="flex-shrink-0 flex items-center gap-2 group">
+                <a href="<?php echo $base_url; ?>/index.php" class="flex-shrink-0 flex items-center gap-2 group">
                     
                     <!-- REPLACEMENT: Tag SVG lama diganti dengan tag IMG di bawah ini -->
-                    <img src="../assets/img/logo-desa.PNG" alt="Logo Desa Purwadana" class="h-10 w-auto group-hover:scale-110 transition-transform object-contain">
+                    <img src="<?php echo $base_url; ?>/assets/img/logo-desa.PNG" alt="Logo Desa Purwadana" class="h-10 w-auto group-hover:scale-110 transition-transform object-contain">
                     
                     <div>
                         <span class="block text-xs text-slate-500 font-medium leading-none">Transparansi Keuangan</span>
@@ -76,8 +76,8 @@ $base_url = '/rpl';
                 </a>
             </div>
             <div class="hidden sm:ml-6 sm:flex sm:items-center sm:space-x-8">
-                <a href="<?php echo $base_url; ?>/public/laporan.php" class="text-slate-600 hover:text-primary font-medium transition-colors">Lihat Laporan</a>
-                <a href="<?php echo $base_url; ?>/public/grafik.php" class="text-slate-600 hover:text-primary font-medium transition-colors">Lihat Grafik</a>
+                <a href="<?php echo $base_url; ?>/laporan.php" class="text-slate-600 hover:text-primary font-medium transition-colors">Lihat Laporan</a>
+                <a href="<?php echo $base_url; ?>/grafik.php" class="text-slate-600 hover:text-primary font-medium transition-colors">Lihat Grafik</a>
                 
                 <?php if(isset($_SESSION['user_id'])): ?>
                     <?php 
@@ -88,7 +88,7 @@ $base_url = '/rpl';
                     ?>
                     <a href="<?php echo $dashboard_url; ?>" class="bg-navy-800 text-white px-5 py-2 rounded-lg font-medium hover:bg-navy-900 transition-colors hover-lift">Dashboard</a>
                 <?php else: ?>
-                    <a href="<?php echo $base_url; ?>/public/login.php" class="bg-primary text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors hover-lift shadow-sm">Login</a>
+                    <a href="<?php echo $base_url; ?>/login.php" class="bg-primary text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors hover-lift shadow-sm">Login</a>
                 <?php endif; ?>
             </div>
             <!-- Mobile menu button -->
@@ -106,12 +106,12 @@ $base_url = '/rpl';
     <!-- Mobile menu -->
     <div class="sm:hidden hidden bg-white border-t border-slate-100" id="mobile-menu">
         <div class="pt-2 pb-3 space-y-1">
-            <a href="<?php echo $base_url; ?>/public/laporan.php" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-slate-600 hover:bg-slate-50 hover:border-slate-300 hover:text-slate-800">Lihat Laporan</a>
-            <a href="<?php echo $base_url; ?>/public/grafik.php" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-slate-600 hover:bg-slate-50 hover:border-slate-300 hover:text-slate-800">Lihat Grafik</a>
+            <a href="<?php echo $base_url; ?>/laporan.php" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-slate-600 hover:bg-slate-50 hover:border-slate-300 hover:text-slate-800">Lihat Laporan</a>
+            <a href="<?php echo $base_url; ?>/grafik.php" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-slate-600 hover:bg-slate-50 hover:border-slate-300 hover:text-slate-800">Lihat Grafik</a>
             <?php if(isset($_SESSION['user_id'])): ?>
                 <a href="<?php echo $dashboard_url; ?>" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-primary hover:bg-slate-50 hover:border-slate-300">Dashboard</a>
             <?php else: ?>
-                <a href="<?php echo $base_url; ?>/public/login.php" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-primary hover:bg-slate-50 hover:border-slate-300">Login</a>
+                <a href="<?php echo $base_url; ?>/login.php" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-primary hover:bg-slate-50 hover:border-slate-300">Login</a>
             <?php endif; ?>
         </div>
     </div>

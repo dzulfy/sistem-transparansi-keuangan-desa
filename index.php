@@ -1,5 +1,5 @@
 <?php
-require_once '../includes/header.php';
+require_once 'includes/header.php';
 ?>
 
 <!-- Hero Section -->
@@ -18,12 +18,12 @@ require_once '../includes/header.php';
                     </p>
                     <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                         <div class="rounded-md shadow">
-                            <a href="<?php echo $base_url; ?>/public/login.php" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-primary hover:bg-blue-700 md:py-4 md:text-lg md:px-10 transition-colors hover-lift">
+                            <a href="<?php echo $base_url; ?>/login.php" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-primary hover:bg-blue-700 md:py-4 md:text-lg md:px-10 transition-colors hover-lift">
                                 Login Petugas Desa
                             </a>
                         </div>
                         <div class="mt-3 sm:mt-0 sm:ml-3">
-                            <a href="<?php echo $base_url; ?>/public/laporan.php" class="w-full flex items-center justify-center px-8 py-3 border-2 border-slate-200 text-base font-medium rounded-lg text-slate-700 bg-white hover:bg-slate-50 md:py-4 md:text-lg md:px-10 transition-colors hover-lift">
+                            <a href="<?php echo $base_url; ?>/laporan.php" class="w-full flex items-center justify-center px-8 py-3 border-2 border-slate-200 text-base font-medium rounded-lg text-slate-700 bg-white hover:bg-slate-50 md:py-4 md:text-lg md:px-10 transition-colors hover-lift">
                                 Eksplorasi Data Publik
                             </a>
                         </div>
@@ -34,7 +34,7 @@ require_once '../includes/header.php';
     </div>
     <!-- Hero Image Placeholder (Abstract Pattern) -->
     <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 bg-slate-50 flex items-center justify-center border-l border-slate-100">
-    <img src="../assets/img/kantor-desa.jpg" alt="Kantor Desa Purwadana" class="w-full h-full object-cover">
+    <img src="assets/img/kantor-desa.jpg" alt="Kantor Desa Purwadana" class="w-full h-full object-cover">
     </div>
 </div>
 
@@ -55,7 +55,7 @@ require_once '../includes/header.php';
                 </div>
                 <h3 class="text-xl font-bold text-navy-800 mb-3">Laporan Detail</h3>
                 <p class="text-slate-600 mb-4">Akses dokumen laporan realisasi anggaran per semester secara mendetail. Dokumen dapat diunduh dalam format PDF.</p>
-                <a href="<?php echo $base_url; ?>/public/laporan.php" class="text-primary font-semibold hover:underline">Lihat Laporan &rarr;</a>
+                <a href="<?php echo $base_url; ?>/laporan.php" class="text-primary font-semibold hover:underline">Lihat Laporan &rarr;</a>
             </div>
             
             <div class="bg-white rounded-2xl p-8 shadow-sm border border-cardBorder hover-lift">
@@ -67,7 +67,7 @@ require_once '../includes/header.php';
                 </div>
                 <h3 class="text-xl font-bold text-navy-800 mb-3">Visualisasi Grafik</h3>
                 <p class="text-slate-600 mb-4">Pantau tren dan komposisi pengeluaran desa melalui grafik interaktif yang mudah dipahami oleh siapa saja.</p>
-                <a href="<?php echo $base_url; ?>/public/grafik.php" class="text-primary font-semibold hover:underline">Lihat Grafik &rarr;</a>
+                <a href="<?php echo $base_url; ?>/grafik.php" class="text-primary font-semibold hover:underline">Lihat Grafik &rarr;</a>
             </div>
         </div>
     </div>
@@ -97,4 +97,4 @@ require_once '../includes/header.php';
     </div>
 </div>
 
-<?php require_once '../includes/footer.php'; ?>
+<?php require_once 'includes/footer.php'; ?>

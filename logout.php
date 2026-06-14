@@ -12,5 +12,5 @@ if (isset($_SESSION['user_id'])) {
 }
 
 session_destroy();
-header("Location: public/login.php");
+header("Location: login.php");
 exit;

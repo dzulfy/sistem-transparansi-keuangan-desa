@@ -25,7 +25,7 @@ require_once '../includes/sidebar_kepala_desa.php';
         <h2 class="text-2xl font-bold text-navy-900">Monitoring Laporan</h2>
         <p class="text-slate-500">Pantau performa penyerapan anggaran dan rincian keuangan desa</p>
     </div>
-    <a href="../public/laporan.php" target="_blank" class="bg-primary hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium flex items-center transition-colors shadow-sm">
+    <a href="../laporan.php" target="_blank" class="bg-primary hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium flex items-center transition-colors shadow-sm">
         <i data-lucide="external-link" class="h-4 w-4 mr-2"></i> Laporan Publik
     </a>
 </div>

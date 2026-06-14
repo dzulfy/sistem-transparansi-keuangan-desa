@@ -1,12 +1,12 @@
 <?php
-require_once '../config/database.php';
-require_once '../includes/functions.php';
-require_once '../includes/auth.php';
+require_once 'config/database.php';
+require_once 'includes/functions.php';
+require_once 'includes/auth.php';
 
 if (isLoggedIn()) {
-    if ($_SESSION['role'] === 'admin') redirect('../admin/index.php');
-    if ($_SESSION['role'] === 'bendahara') redirect('../bendahara/index.php');
-    if ($_SESSION['role'] === 'kepala_desa') redirect('../kepala_desa/index.php');
+    if ($_SESSION['role'] === 'admin') redirect('admin/index.php');
+    if ($_SESSION['role'] === 'bendahara') redirect('bendahara/index.php');
+    if ($_SESSION['role'] === 'kepala_desa') redirect('kepala_desa/index.php');
 }
 
 $error = '';
@@ -31,9 +31,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Log login activity
             logAktivitas($pdo, $user['id_user'], "Melakukan login ke sistem.");
 
-            if ($user['role'] === 'admin') redirect('../admin/index.php');
-            if ($user['role'] === 'bendahara') redirect('../bendahara/index.php');
-            if ($user['role'] === 'kepala_desa') redirect('../kepala_desa/index.php');
+            if ($user['role'] === 'admin') redirect('admin/index.php');
+            if ($user['role'] === 'bendahara') redirect('bendahara/index.php');
+            if ($user['role'] === 'kepala_desa') redirect('kepala_desa/index.php');
         } else {
             $error = "Username atau password salah.";
         }
@@ -140,7 +140,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
             
             <div class="text-center mt-4">
-                <a href="<?php echo getBaseUrl(); ?>/public/index.php" class="text-sm text-slate-500 hover:text-primary">&larr; Kembali ke Beranda</a>
+                <a href="<?php echo getBaseUrl(); ?>/index.php" class="text-sm text-slate-500 hover:text-primary">&larr; Kembali ke Beranda</a>
             </div>
         </form>
     </div>

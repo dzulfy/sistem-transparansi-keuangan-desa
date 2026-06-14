@@ -10,10 +10,10 @@
                 </div>
             </div>
             <div class="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-2">
-                <a href="/rpl/public/syarat-ketentuan.php" class="text-sm text-slate-500 hover:text-primary transition-colors">Kebijakan Privasi</a>
-                <a href="/rpl/public/syarat-ketentuan.php" class="text-sm text-slate-500 hover:text-primary transition-colors">Syarat &amp; Ketentuan</a>
-                <a href="/rpl/public/kontak.php" class="text-sm text-slate-500 hover:text-primary transition-colors">Kontak Kami</a>
-                <a href="/rpl/public/peta-situs.php" class="text-sm text-slate-500 hover:text-primary transition-colors">Peta Situs</a>
+                <a href="<?php echo $base_url; ?>/syarat-ketentuan.php" class="text-sm text-slate-500 hover:text-primary transition-colors">Kebijakan Privasi</a>
+                <a href="<?php echo $base_url; ?>/syarat-ketentuan.php" class="text-sm text-slate-500 hover:text-primary transition-colors">Syarat &amp; Ketentuan</a>
+                <a href="<?php echo $base_url; ?>/kontak.php" class="text-sm text-slate-500 hover:text-primary transition-colors">Kontak Kami</a>
+                <a href="<?php echo $base_url; ?>/peta-situs.php" class="text-sm text-slate-500 hover:text-primary transition-colors">Peta Situs</a>
             </div>
         </div>
     </div>

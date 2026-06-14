@@ -1,6 +1,6 @@
 <?php
-require_once '../config/database.php';
-require_once '../includes/functions.php';
+require_once 'config/database.php';
+require_once 'includes/functions.php';
 
 // Tab selection: 'realtime' or 'audited'
 $tab = $_GET['tab'] ?? 'realtime';
@@ -70,7 +70,7 @@ $tahunStmt = $pdo->query("
 ");
 $daftarTahun = $tahunStmt->fetchAll();
 
-require_once '../includes/header.php';
+require_once 'includes/header.php';
 ?>
 
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
@@ -370,4 +370,4 @@ require_once '../includes/header.php';
 
 </div>
 
-<?php require_once '../includes/footer.php'; ?>
+<?php require_once 'includes/footer.php'; ?>
