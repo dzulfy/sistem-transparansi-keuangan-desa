@@ -12,6 +12,7 @@ $base_url = 'https://desapurwadana.my.id';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistem Transparansi Keuangan Desa</title>
+    <link rel="icon" href="<?php echo $base_url; ?>/assets/img/logo-desa.PNG" type="image/png">
     
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

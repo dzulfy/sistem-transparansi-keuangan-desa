@@ -1,5 +1,6 @@
 <?php
 // config/database.php
+date_default_timezone_set('Asia/Jakarta');
 
 define('DB_HOST', 'sql111.infinityfree.com');
 define('DB_USER', 'if0_41709109');

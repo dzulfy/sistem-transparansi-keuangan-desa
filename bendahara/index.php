@@ -54,7 +54,7 @@ require_once '../includes/sidebar_bendahara.php';
             <span><?php echo $persentase; ?>%</span>
         </div>
         <div class="w-full bg-slate-100 rounded-full h-1.5">
-            <div class="bg-primary h-1.5 rounded-full" style="width: <?php echo $persentase; ?>%"></div>
+            <div class="bg-primary h-1.5 rounded-full" style="width: <?php echo min(100, $persentase); ?>%"></div>
         </div>
         <div class="absolute right-6 top-6 h-12 w-12 bg-blue-50 text-primary rounded-xl flex items-center justify-center">
             <i data-lucide="wallet" class="h-6 w-6"></i>

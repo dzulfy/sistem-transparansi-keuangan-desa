@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('Asia/Jakarta');
 
 require_once 'config/database.php';
 require_once 'vendor/autoload.php';
@@ -25,6 +26,12 @@ $persentase = 0;
 if ($data['total_anggaran'] > 0) {
     $persentase = ($data['total_realisasi'] / $data['total_anggaran']) * 100;
 }
+
+$bulan = [
+    1 => 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
+    'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'
+];
+$waktu_cetak = date('d') . ' ' . $bulan[(int)date('m')] . ' ' . date('Y H:i:s') . ' WIB';
 
 $html = '
 <!DOCTYPE html>
@@ -159,7 +166,7 @@ $html = '
     </table>
 
     <div class="print-date">
-        Dicetak pada: '.date('d F Y H:i:s').'
+        Dicetak pada: '.$waktu_cetak.'
     </div>
 
     <div class="footer">

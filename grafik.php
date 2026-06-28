@@ -107,7 +107,7 @@ require_once 'includes/header.php';
             <p class="text-sm font-medium text-slate-500 uppercase tracking-wide mb-1">Persentase Realisasi</p>
             <h3 class="text-2xl font-bold text-primary mb-2"><?php echo $persentase; ?>%</h3>
             <div class="w-full bg-slate-200 rounded-full h-2">
-                <div class="bg-primary h-2 rounded-full" style="width: <?php echo $persentase; ?>%"></div>
+                <div class="bg-primary h-2 rounded-full" style="width: <?php echo min(100, $persentase); ?>%"></div>
             </div>
         </div>
     </div>
